@@ -26,7 +26,14 @@ These scripts must all be in the same directory in order to function.  The resul
 
 ### Hardware VISA addresses
 
-Before running the scripts, the VISA address of the signal generator and oscilloscope  must be appended to the sub_Scope_Initialize.m and sub_SG_Initialize.m files.  Consult the programming manual of the signal generator and oscilloscope to determine how to find the specific instrument's VISA address.  The program should be able to find the connected Velmex motor stage automatically. 
+Before running the scripts, the VISA address of the signal generator and oscilloscope  must be appended to the following files as appropriate:
+
+```
+sub_Scope_Initialize.m (for the oscilloscope)
+sub_SG_Initialize.m (for the signal generator)
+```
+
+Consult the programming manual of the signal generator and oscilloscope to determine how to find the specific instrument's VISA address.  The program should be able to find the connected Velmex motor stage automatically. 
 
 ### Hardware USB connections
 
