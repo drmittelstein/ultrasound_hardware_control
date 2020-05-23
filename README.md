@@ -39,9 +39,18 @@ Consult the programming manual of the signal generator and oscilloscope to deter
 
 The signal generator, oscilloscope, and motor controller must be connected to the Matlab computer via USB cables.  Using unpowered USB ports may lead to unstable connections that can cause the programs to crash.  Use powered USB hubs if possible.
 
-### Installing
+## Suggested Hardware Configuration (adjustable in code)
 
-A step by step series of examples that tell you how to get a development env running
+For the BKP signal generator (SG) and Keysight oscillscope (Scope), a suspected cable configuration is as follows:
+
+```
+SG Ch 1 <--> Scope Ch 1
+SG Ch 1 <--> SG Ext Trg
+SG Ch 2 <--> Scope Ch 2
+SG Ch 2 <--> Amplifier In
+Amplifier out <--> US Tx
+Hydrophone <--> Scope Ch 4
+```
 
 Say what the step will be
 
