@@ -44,51 +44,21 @@ The signal generator, oscilloscope, and motor controller must be connected to th
 For the BKP signal generator (SG) and Keysight oscillscope (Scope), a suspected cable configuration is as follows:
 
 ```
-SG Ch 1 <--> Scope Ch 1
+SG Ch 1 <--> Scope Ch 1 (1 Mohm impedance)
 SG Ch 1 <--> SG Ext Trg
-SG Ch 2 <--> Scope Ch 2
+SG Ch 2 <--> Scope Ch 2  (1 Mohm impedance)
 SG Ch 2 <--> Amplifier In
 Amplifier out <--> US Tx
-Hydrophone <--> Scope Ch 4
+Hydrophone <--> Scope Ch 4 (matched impedance with hydrophone)
 ```
 
-Say what the step will be
+This allows the signal readout from the oscilloscope to be:
 
 ```
-Give the example
+Scope Ch 1 - ultrasound pulse envelope
+Scope Ch 2 - signal generator signal output
+Scope Ch 4 - hydrophone signal output
 ```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Contributing
 
