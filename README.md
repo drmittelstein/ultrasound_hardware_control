@@ -10,19 +10,27 @@ This system requires MATLAB with the Instrument Control Toolbox Support Package 
 
 This system is designed to function with the following instruments:
 
-'''
+```
 BK Precision 4050 Function / Arbitrary Waveform Generator
 Keysight InfiniiVision 3000 X-Series Oscilloscope
 Velmex VMX-3 Stepping Motor Controller
-'''
+```
 
 If a different waveform generator, oscilloscope, or motor controller is used, the subroutines used in this code must be modified to the programming syntax of these new pieces of hardware as described in their programming manual
 
-## Getting Started
+## Setup
+
+### Matlab computer
 
 These scripts must all be in the same directory in order to function.  The results of any scans or acquisitions made by these scripts will be in a "results" subdirectory in this directory, so place this directory in a drive with sufficient available space.
 
+### Hardware VISA addresses
 
+Before running the scripts, the VISA address of the signal generator and oscilloscope  must be appended to the sub_Scope_Initialize.m and sub_SG_Initialize.m files.  Consult the programming manual of the signal generator and oscilloscope to determine how to find the specific instrument's VISA address.  The program should be able to find the connected Velmex motor stage automatically. 
+
+### Hardware USB connections
+
+The signal generator, oscilloscope, and motor controller must be connected to the Matlab computer via USB cables.  Using unpowered USB ports may lead to unstable connections that can cause the programs to crash.  Use powered USB hubs if possible.
 
 ### Installing
 
