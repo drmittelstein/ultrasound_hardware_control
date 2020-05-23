@@ -62,6 +62,39 @@ Scope Ch 2 - signal generator signal output
 Scope Ch 4 - hydrophone signal output
 ```
 
+## How to Use
+
+Prior to any experiment, update the transducer, amplifier, and safety values within:
+
+```
+sub_AllSettings.m
+```
+
+### Transducer Alignment
+
+Position both the transducer and hydrophone in a water bath, with the transducer mounted to the motor stage system.  Define a low intensity pulsed ultrasound test signal that can be run safely continuously during alignment using:
+
+```
+SetTestingParameter.m
+```
+
+Edit the testing parameters within that file first, then execute the file to apply those changes to the signal generator.  That script will throw an error if any value violates the prior defined safety limits.
+
+Manually position the hydrophone such that a signal appears on the oscilloscope.  The review, edit, and use the following search scripts to find the maximum value:
+
+```
+Scan_FindMax_v4.m
+Scan_Grid.m
+```
+
+After a scan file has been completed, a "params" structure will appear in the variable explorer.  This enables the use of the following utility functions:
+
+```
+BackToOrigin.m
+MoveToMax.m
+```
+
+
 ## Contributing
 
 Currently contributing is not suppported, please see future versions at htts://github.com/drmittelstein/oncotripsy to determine whether this changes.
