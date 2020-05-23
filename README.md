@@ -28,7 +28,7 @@ These scripts must all be in the same directory in order to function.  The resul
 
 ### Hardware VISA addresses
 
-Before running the scripts, the VISA address of the signal generator and oscilloscope  must be appended to the following files as appropriate:
+Before running the scripts, the VISA address of the signal generator and oscilloscope  must be appended to the list of VISA addresses within the following files:
 
 ```
 sub_Scope_Initialize.m (for the oscilloscope)
