@@ -80,7 +80,14 @@ SetTestingParameter.m
 
 Edit the testing parameters within that file first, then execute the file to apply those changes to the signal generator.  That script will throw an error if any value violates the prior defined safety limits.
 
-Manually position the hydrophone such that a signal appears on the oscilloscope.  The review, edit, and use the following search scripts to find the maximum value:
+Manually position the transsducer such that a signal appears on the oscilloscope.  If using a GUI would be useful in this manual course adjustment of the transducer, then run:
+
+```
+stage_GUI.m
+```
+
+
+The review, edit, and use the following search scripts to find the maximum value:
 
 ```
 Scan_FindMax_v4.m
@@ -92,6 +99,31 @@ After a scan file has been completed, a "params" structure will appear in the va
 ```
 BackToOrigin.m
 MoveToMax.m
+```
+
+### Transducer Calibration
+
+After aligning the transducer to the hydrophone as described above, use the following script to get the pressure waveforms for various ultrasound waveforms sent through the transducer:
+
+```
+Scan_TransducerResponse_Adv.m
+```
+
+### 24 well plate insonation
+
+After aligning the transducer to Well A1 of the 24 well plate, using a modification of the method described above, develop an excel document as described in the comments of the following script, and follow the comments in order to achieve a unique waveform per well of the 24 well plate
+
+```
+wellplate_v4_zigzag43.m
+```
+
+### Cavitation Experiments
+
+Co-align both the HIFU transducer and the passive cavitation imaging detector orthogonally to the same point.  Follow the instructions in the comments of the following scripts in order to perform triggered cavitation measurements:
+
+```
+Cavitation_Rpt.m
+Cavitation_Seg_Rpt.m
 ```
 
 
