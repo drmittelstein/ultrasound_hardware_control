@@ -136,11 +136,7 @@ Please see available versions at https://github.com/drmittelstein/oncotripsy
 
 ## Authors
 
-* **David Reza Mittelstein** - *Caltech Doctorate Thesis in Medical Engineering* - "Modifying ultrasound waveform parameters to control, influence, or disrupt cells"
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+* **David Reza Mittelstein** - "Modifying ultrasound waveform parameters to control, influence, or disrupt cells" *Caltech Doctorate Thesis in Medical Engineering*
 
 ## Acknowledgments
 
