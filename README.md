@@ -129,14 +129,14 @@ Cavitation_Seg_Rpt.m
 
 ## Contributing
 
-Currently contributing is not suppported, please see future versions at htts://github.com/drmittelstein/oncotripsy to determine whether this changes.
+Currently contributing is not suppported, please see future versions at https://github.com/drmittelstein/oncotripsy to determine whether this changes.
 
 ## Versioning
-Please see available versions at htts://github.com/drmittelstein/oncotripsy
+Please see available versions at https://github.com/drmittelstein/oncotripsy
 
 ## Authors
 
-* **David Reza Mittelstein** - *Caltech Doctorate Thesis Work* - 
+* **David Reza Mittelstein** - *Caltech Doctorate Thesis in Medical Engineering* - "Modifying ultrasound waveform parameters to control, influence, or disrupt cells"
 
 ## License
 
