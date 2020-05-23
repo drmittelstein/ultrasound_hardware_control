@@ -16,7 +16,9 @@ Keysight InfiniiVision 3000 X-Series Oscilloscope
 Velmex VMX-3 Stepping Motor Controller
 ```
 
-If a different waveform generator, oscilloscope, or motor controller is used, the subroutines used in this code must be modified to the programming syntax of these new pieces of hardware as described in their programming manual
+If a different waveform generator, oscilloscope, or motor controller is used, the subroutines used in this code must be modified to the programming syntax of these new pieces of hardware as described in their programming manual.
+
+The ultrasound signal generated needs to be amplified using an RF amplifier that can boost the signal voltage to be sufficient to drive an ultrasound transducer at the target pressure values.  A hydrophone system, such as a fiber optic hydrophone is necessary to detect the ultrasound signal at a test point to allow for alignment and calibration.
 
 ## Setup
 
