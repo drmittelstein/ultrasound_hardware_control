@@ -140,4 +140,4 @@ Please see available versions at https://github.com/drmittelstein/oncotripsy
 
 ## Acknowledgments
 
-* Acknowledgements to my colleagues in Gharib, Shapiro, and Colonius lab at Caltech who helped answer questions involved in thed development of these scripts.
+* Acknowledgements to my colleagues in Gharib, Shapiro, and Colonius lab at Caltech who helped answer questions involved in the development of these scripts.
