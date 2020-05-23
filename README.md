@@ -1,10 +1,22 @@
-# Project Title
+# Ultrasound Hardware Control
 
 This repository includes scripts that allow the user to conduct ultrasound experiments.  Scripts enable the users to align and calibrate ultrasound transducers and to control the insonation of these transducers on targets in 24 well plate platforms.
 
-### Prerequisites
+### Software Prerequisites
 
-This system requires MATLAB with the Agilent VISA controller add-on installed.
+This system requires MATLAB with the Instrument Control Toolbox Support Package that is relevant for the hardware that you will be using.  For example, the code as currently written uses the "Instrument Control Toolbox Support Package for Keysight IO Libraries and VISA Interface"
+
+### Hardware Required
+
+This system is designed to function with the following instruments:
+
+'''
+BK Precision 4050 Function / Arbitrary Waveform Generator
+Keysight InfiniiVision 3000 X-Series Oscilloscope
+Velmex VMX-3 Stepping Motor Controller
+'''
+
+If a different waveform generator, oscilloscope, or motor controller is used, the subroutines used in this code must be modified to the programming syntax of these new pieces of hardware as described in their programming manual
 
 ## Getting Started
 
