@@ -129,10 +129,10 @@ Cavitation_Seg_Rpt.m
 
 ## Contributing
 
-Currently contributing is not suppported, please see future versions at https://github.com/drmittelstein/oncotripsy to determine whether this changes.
+Currently contributing is not suppported, please see future versions at https://github.com/drmittelstein/ultrasound_hardware_control to determine whether this changes.
 
 ## Versioning
-Please see available versions at https://github.com/drmittelstein/oncotripsy
+Please see available versions at https://github.com/drmittelstein/ultrasound_hardware_control
 
 ## Authors
 
