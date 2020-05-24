@@ -87,7 +87,7 @@ stage_GUI.m
 ```
 
 
-The review, edit, and use the following search scripts to find the maximum value:
+Then review, edit, and use the following search scripts to find the maximum value:
 
 ```
 Scan_FindMax_v4.m
