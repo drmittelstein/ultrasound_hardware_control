@@ -13,7 +13,7 @@ This system is designed to function with the following instruments:
 ```
 BK Precision 4050 Function / Arbitrary Waveform Generator
 Keysight InfiniiVision 3000 X-Series Oscilloscope
-Velmex VMX-3 Stepping Motor Controller
+Velmex VXM-3 Stepping Motor Controller
 ```
 
 If a different waveform generator, oscilloscope, or motor controller is used, the subroutines used in this code must be modified to the programming syntax of these new pieces of hardware as described in their programming manual.
@@ -126,6 +126,80 @@ Cavitation_Rpt.m
 Cavitation_Seg_Rpt.m
 ```
 
+## Scripts in this repository
+| Script name                       | Description          |
+|-----------------------------------|----------------------|
+| BackToOrigin.m                    | Move stage to origin |
+| Cavitation_Rpt.m                  |                      |
+| Cavitation_Seg_Rpt.m              |                      |
+| CustomWaveformGenerator.m         |                      |
+| MakeMovieFromGridWaveform.m       |                      |
+| MoveSpecial.m                     |                      |
+| MoveSpecialMM.m                   |                      |
+| MoveToHome.m                      |                      |
+| MoveToMax.m                       |                      |
+| Release_Stage.m                   |                      |
+| Scan_Acquire.m                    |                      |
+| Scan_Acquire_Cont.m               |                      |
+| Scan_FindMax_v4.m                 |                      |
+| Scan_Grid.m                       |                      |
+| Scan_Space.m                      |                      |
+| Scan_TransducerResponse_Adv.m     |                      |
+| SetTestingParameters.m            |                      |
+| stage_GUI.m                       |                      |
+| sub_AllSettings.m                 |                      |
+| sub_Close_All_Connections.m       |                      |
+| sub_Data_CompressWaveform.m       |                      |
+| sub_Data_Countdown.m              |                      |
+| sub_Data_DecompressWaveform.m     |                      |
+| sub_Data_Hydrophone_Curve.m       |                      |
+| sub_SG_ApplySettings.m            |                      |
+| sub_SG_ApplySettingsForTrigger.m  |                      |
+| sub_SG_Initialize.m               |                      |
+| sub_SG_Start.m                    |                      |
+| sub_SG_Stop.m                     |                      |
+| sub_SG_Trigger.m                  |                      |
+| sub_SG_Wait_Until_Ready.m         |                      |
+| sub_Scope_ApplySettings.m         |                      |
+| sub_Scope_Initialize.m            |                      |
+| sub_Scope_Readout_All.m           |                      |
+| sub_Scope_Readout_All_NoRefresh.m |                      |
+| sub_Scope_Readout_HQ.m            |                      |
+| sub_Scope_Readout_HQ_simple.m     |                      |
+| sub_Scope_Run.m                   |                      |
+| sub_Stage_Cancel.m                |                      |
+| sub_Stage_Initialize.m            |                      |
+| sub_Stage_Move.m                  |                      |
+| sub_Stage_Move_To.m               |                      |
+| sub_Stage_Move_Vec.m              |                      |
+| sub_Stage_Update_Positions.m      |                      |
+| sub_Stage_Wait_Until_Ready.m      |                      |
+| sub_wellplate_UpdateGUI.m         |                      |
+| subdir.m                          |                      |
+| wellplate_GUI.m                   |                      |
+| wellplate_v4_zigzag43.m           |                      |
+
+## Basics of interfacing with hardware via Matlab
+
+### VXM stepping motor controller
+
+#### Matlab commands used
+
+| serial Interface command                                                             | serialport Interface command | Example use case           |
+|--------------------------------------------------------------------------------------|-----------------------|-----------------------------------|
+| seriallist                                                                           | serialportlist        | Discover Serial Port Devices      |
+| serial                                                                               | serialport            | Connect to Serial Port Device     |
+| fwrite and fread                                                                     | write and read        | Read and Write                    |
+| fprintf                                                                              | writeline             | Send a Command                    |
+| fscanf, fgetl, and fgets                                                             | readline              | Read a Terminated String          |
+| flushinput and flushoutput                                                           | flush                 | Flush Data from Memory            |
+| Terminator                                                                           | configureTerminator   | Set Terminator                    |
+| BytesAvailableFcnCount, BytesAvailableFcnMode, BytesAvailableFcn, and BytesAvailable | configureCallback     | Set Up a Callback Function        |
+| PinStatus                                                                            | getpinstatus          | Read Serial Pin Status            |
+| DataTerminalReady and RequestToSend                                                  | setDTR and setRTS     | Set Serial DTR and RTS Pin States |
+| serial Properties                                                                    | serialport Properties |                                   |
+
+See here for more information on communicating with serial and serialport objects via Matlab: https://www.mathworks.com/help/matlab/import_export/transition-your-code-to-serialport-interface.html
 
 ## Contributing
 
