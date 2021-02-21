@@ -2,7 +2,7 @@
 % Medical Engineering, California Institute of Technology, 2020
 
 % SUBROUTINE
-Readout multiple channels from oscilloscope
+% Readout multiple channels from oscilloscope
 
 function params = sub_Scope_Readout_All(params)
 
