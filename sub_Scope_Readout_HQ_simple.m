@@ -4,7 +4,7 @@
 % SUBROUTINE
 % Read out data from oscilloscope at maximum data quality, making some simplifying assumptions
 
-function params = sub_Scope_Readout_HQ(params)
+function params = sub_Scope_Readout_HQ_simple(params)
 
 % Clear previous data from channels
 % for channel = 1:4
@@ -154,7 +154,7 @@ catch ex
     end
     
     delete(h);
-    params = sub_Scope_Readout_HQ(params);
+    params = sub_Scope_Readout_HQ_simple(params);
 end
 
 end
