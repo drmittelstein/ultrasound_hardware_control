@@ -141,7 +141,6 @@ SetTestingParameters.m|Send command to Signal Generator to define testing parame
 Utility script to be used during experiments
 Script Name | Description
 ----------- | -----------
-
 BackToOrigin.m|Send command to Velmex stage to move back to the origin.  This command must be run with a valid params file defined.  General use is after another command has been run that moves the stage
 Move.m|Move a specific number of mm
 MoveOnPlate.m|Move a special distance (integer steps of Plate.welldistance).  Useful during 24 well plate experiments
