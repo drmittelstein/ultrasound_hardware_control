@@ -8,7 +8,7 @@
 % absolute position.
 %
 % NOTE: if anything is attached to the Velmex stage, this motion may cause
-% the attached items to collid with water-bath, etc, so use with caution
+% the attached items to collide with water-bath, etc, so use with caution
 
 clc;
 disp('This command moves the stage to the negative most point on all axes')

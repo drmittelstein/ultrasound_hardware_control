@@ -127,57 +127,78 @@ Cavitation_Seg_Rpt.m
 ```
 
 ## Scripts in this repository
-| Script name                       | Description          |
-|-----------------------------------|----------------------|
-| BackToOrigin.m                    | Move stage to origin |
-| Cavitation_Rpt.m                  |                      |
-| Cavitation_Seg_Rpt.m              |                      |
-| CustomWaveformGenerator.m         |                      |
-| MakeMovieFromGridWaveform.m       |                      |
-| MoveSpecial.m                     |                      |
-| MoveSpecialMM.m                   |                      |
-| MoveToHome.m                      |                      |
-| MoveToMax.m                       |                      |
-| Release_Stage.m                   |                      |
-| Scan_Acquire.m                    |                      |
-| Scan_Acquire_Cont.m               |                      |
-| Scan_FindMax_v4.m                 |                      |
-| Scan_Grid.m                       |                      |
-| Scan_Space.m                      |                      |
-| Scan_TransducerResponse_Adv.m     |                      |
-| SetTestingParameters.m            |                      |
-| stage_GUI.m                       |                      |
-| sub_AllSettings.m                 |                      |
-| sub_Close_All_Connections.m       |                      |
-| sub_Data_CompressWaveform.m       |                      |
-| sub_Data_Countdown.m              |                      |
-| sub_Data_DecompressWaveform.m     |                      |
-| sub_Data_Hydrophone_Curve.m       |                      |
-| sub_SG_ApplySettings.m            |                      |
-| sub_SG_ApplySettingsForTrigger.m  |                      |
-| sub_SG_Initialize.m               |                      |
-| sub_SG_Start.m                    |                      |
-| sub_SG_Stop.m                     |                      |
-| sub_SG_Trigger.m                  |                      |
-| sub_SG_Wait_Until_Ready.m         |                      |
-| sub_Scope_ApplySettings.m         |                      |
-| sub_Scope_Initialize.m            |                      |
-| sub_Scope_Readout_All.m           |                      |
-| sub_Scope_Readout_All_NoRefresh.m |                      |
-| sub_Scope_Readout_HQ.m            |                      |
-| sub_Scope_Readout_HQ_simple.m     |                      |
-| sub_Scope_Run.m                   |                      |
-| sub_Stage_Cancel.m                |                      |
-| sub_Stage_Initialize.m            |                      |
-| sub_Stage_Move.m                  |                      |
-| sub_Stage_Move_To.m               |                      |
-| sub_Stage_Move_Vec.m              |                      |
-| sub_Stage_Update_Positions.m      |                      |
-| sub_Stage_Wait_Until_Ready.m      |                      |
-| sub_wellplate_UpdateGUI.m         |                      |
-| subdir.m                          |                      |
-| wellplate_GUI.m                   |                      |
-| wellplate_v4_zigzag43.m           |                      |
+Alignment/Measurement Scripts
+Script Name | Description
+----------- | -----------
+Scan_Acquire_Cont.m|Acquire waveform continually, refreshing as fast as possible.  Allows for capturing time varying phenomenon that are not linked to a signal for acquisition
+Scan_Aquire.m|Acquire a single waveform at one position
+Scan_FindMax_v4.m|Moves motor stage in 3 dimensions to ascend the gradient to a local maximum.  Attention!  Monitor the hydrophone used to measure pressure here, this script may cause the transducer to directly collide with the transducer!
+Scan_Grid.m|Uses Velmex stage to move in a predefined pattern to get pressure waveform at all points in a grid
+Scan_Space.m|Uses Velmex stage to move in a predefined pattern to get pressure waveform at all points in a 3d space
+Scan_TransducerResponse_Adv.m|Cycles through a set of voltages and frequencies to determine the transducer response to signal generator signal using a hydrophone setup.
+SetTestingParameters.m|Send command to Signal Generator to define testing parameters.
+
+Utility script to be used during experiments
+Script Name | Description
+----------- | -----------
+
+BackToOrigin.m|Send command to Velmex stage to move back to the origin.  This command must be run with a valid params file defined.  General use is after another command has been run that moves the stage
+Move.m|Move a specific number of mm
+MoveOnPlate.m|Move a special distance (integer steps of Plate.welldistance).  Useful during 24 well plate experiments
+MoveToHome.m|Moves every motor of the Velmex stage to their home position (defined by Velmex as triggering the negative bumper on the rail) and then zeroes the position internally and in the params file at that location.  This can be useful if you wish to move the Velmex stage to an absolute position.  NOTE: if anything is attached to  the Velmex stage, this motion may cause the attached items to collide with water-bath, etc, so use with caution
+MoveToMax.m|Send command to Velmex stage to move to the point with the highest params.Scan.Objective value. This command must be run with a valid params file defined. General use is after another command has been run that moves the stage
+Release_Stage.m|Send a command to the Velmex stage to enable manual control of the stage using buttons
+
+Cavitation Scripts
+Script Name | Description
+----------- | -----------
+Cavitation_Rpt.m|Measure scattered signal from cavitating sample. Acquires multiple pulses of signal. Oscilloscope configured for single acquisition per pulse
+Cavitation_Seg_Rpt.m|Measure scattered signal from cavitating sample. Acquires multiple pulses of signal. Oscilloscope configured for segmented acquisition per pulse
+
+GUI
+Script Name | Description
+----------- | -----------
+stage_GUI.m|Activates a GUI that allows for control of Velmex stage
+Wellplate_v4_zigzag43.m|Wellplate allows you to load an 24 well plate experimental file and run the signal generator and motor stage to expose each well of the 24 well plate to a unique ultrasound signal.
+
+Other Scripts
+Script Name | Description
+----------- | -----------
+CustomWaveformGenerator.m|Generate custom waveform files of frequency  sweeps. These are compatible with BKP signal generators
+MakeMovieFromGridWaveform.m|Scan Grid data files collect pressure signal over time for various different data points. Stepping through time points at all positions can allow the generation of videos where pixel intensity correlates to pressure over time, allowing visualization of standing wave or traveling wave patterns
+
+Subroutine
+Script Name | Description
+----------- | -----------
+sub_AllSettings.m|This subroutine is called in the beginning of each script to generate the params structure.  This includes experiment specific values that should be adjusted before each experiment including: * Safety parameters - that prevent the signal generator from sending a signal that could damage equipment or samples. * Hardware default parameters. * Reference parameters
+Sub_Close_All_Connections.m|Opens hardware connection ports by closing all open connections. Runs safe (all commands within try)
+sub_Data_CompressWaveform.m|Compresses a waveform
+sub_Data_Countdown.m|Outputs a countdown in Matlab command window
+sub_Data_DecompressWaveform.m|Decompress waveform
+sub_Data_Hydrophone_Curve.m|Convert voltage per time to pressure per time given calibration file
+sub_Scope_ApplySettings.m|Apply the settings in the params structure to the oscilloscope
+sub_Scope_Initialize.m|Form a connection to the oscilloscope
+sub_Scope_Readout_All.m|Readout multiple channels from oscilloscope
+sub_Scope_Readout_All_NoRefresh.m|Read out all data currently displayed on oscilloscope, do not re-aquire
+sub_Scope_Readout_HQ.m|Readout data at maximum quality (large data files)
+sub_Scope_Readout_HQ_simple.m|Read out data from oscilloscope at maximum data quality, making some simplifying assumptions
+sub_Scope_Run.m|Press "Run" button on oscilloscope, essential gives real time readout rather than remaining on "Stop" after acquisition
+sub_SG_ApplySettings.m|Apply settings from param structure to the connected signal generator
+sub_SG_ApplySettingsForTrigger.m|Apply settings to the signal generator, and prime for a receiving a trigger command
+sub_SG_Initialize.m|Initialize a connection to the signal generator
+sub_SG_Start.m|Turn the output from the signal generator to be ON
+sub_SG_Stop.m|Turn the output from the signal generator to be OFF
+sub_SG_Trigger.m|Send a trigger command to the signal generator
+sub_SG_Wait_Until_Ready.m|Wait until the signal generator has completed operations
+sub_Stage_Cancel.m|Cancel the command that was sent to the stage
+sub_Stage_Initialize.m|Initialize connection to the Velmex stage
+sub_Stage_Move.m|Move a specified motor a specified number of motor steps
+sub_Stage_Move_To.m|Move to a certain desired location
+sub_Stage_Move_Vec.m|Move by a certain vector offset
+sub_Stage_Update_Positions.m|Update the stage positions that is saved in params
+sub_Stage_Wait_Until_Ready.m|Wait until the stage is ready
+
+
 
 ## Basics of interfacing with hardware via Matlab
 

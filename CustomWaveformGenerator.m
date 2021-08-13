@@ -1,25 +1,27 @@
 % Author: David Reza Mittelstein (drmittelstein@gmail.com)
 % Medical Engineering, California Institute of Technology, 2020
 
-%// GENERATE CUSTOM WAVEFORMS
-%// A = sine wave amplitude
-%// fs = sample rate (Hz)
-%// f0 = initial frequency (Hz)
-%// f1 = final frequency (Hz)
-%// T_sweep = duration of sweep (s)
-%//
+% Generate custom waveform files of frequency sweeps
+% These are compatible with BKP signal generators
+%
+% NOTE: This program will requiring customizing to your specific use case
+% before running.
+%
+% A = sine wave amplitude
+% fs = sample rate (Hz)
+% f0 = initial frequency (Hz)
+% f1 = final frequency (Hz)
+% T_sweep = duration of sweep (s)
 
 %% Load calibration file here
 clearvars
 load('S:\Ultrasound Data\Mittelstein\results\2019-02-25\results_Scan_TransducerResponse_2019-02-25_09-05.mat')
 clear fulldata
 
-%%
 p = params.Results.PNP;
 f = params.Freq_Vol.frequencies;
 
 calibration = [f',p];
-
 
 %%
 BWs = [200e3];

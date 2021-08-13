@@ -6,6 +6,9 @@
 % videos where pixel intensity correlates to pressure over time, allowing visualization
 % of standing wave or traveling wave patterns
 
+% NOTE: This program will requiring customizing to your specific use case
+% before running.
+
 clc
 
 files = {...

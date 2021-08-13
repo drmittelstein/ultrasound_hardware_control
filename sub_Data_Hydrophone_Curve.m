@@ -4,7 +4,7 @@
 % SUBROUTINE
 % Convert voltage per time to pressure per time given calibration file
 
-function answer = sub_process_hydrophone_curve(time,voltage,calibration)
+function answer = sub_Data_Hydrophone_Curve(time,voltage,calibration)
 
 % Function to process a waveform from a hydrophone based on the provided
 % calibration.

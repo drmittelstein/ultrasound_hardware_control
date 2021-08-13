@@ -2,7 +2,7 @@
 % Medical Engineering, California Institute of Technology, 2020
 
 % SUBROUTINE
-% Initialize connetion to the Velmex stage
+% Initialize connection to the Velmex stage
 
 function params = sub_Stage_Initialize(params)
 
@@ -15,16 +15,6 @@ try
     end
 catch
 end
-
-params.Stages.Motors_Connected = 0;
-
-% Global Stage Parameters
-params.Stages.step_distance = 0.0254/10/400; % Translation Distance (m) Per Step For each motor (motors are the same)
-
-% Assignment of Motor numbers to axes (as per the definition image)
-params.Stages.x_motor = 2;
-params.Stages.y_motor = 3;
-params.Stages.z_motor = 1;
 
 params.Stages.Motor_Connected = 0;
 

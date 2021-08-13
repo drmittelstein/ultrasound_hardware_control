@@ -5,7 +5,7 @@
 %% Alignment
 
 % Transducer must be perfectly aligned with well A1 prior to beginning
-% expeirment.  The code assumes that the initial position of the stage
+% experiment.  The code assumes that the initial position of the stage
 % positions the transducer to insonate A1
 
 %% Experimental Filename

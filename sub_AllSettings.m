@@ -4,7 +4,7 @@
 % SUBROUTINE
 % This subroutine is called in the beginning of each script to generate the params structure
 % This includes experiment specific values that should be adjusted before each experiment including:
-% * Safety paramters - that prevent the signal generator from sending a signal that could damage equipment or samples
+% * Safety parameters - that prevent the signal generator from sending a signal that could damage equipment or samples
 % * Hardware default parameters
 % * Reference parameters
 
@@ -29,8 +29,10 @@ params.Amplifier.MaxPulseDuration = 0.1; % Maximum time in seconds that pulse du
 params.Amplifier.Name = 'AR100A250B'; % Used for Reference
 params.Amplifier.ReadMe = 'Gain from Vpp on signal generator GUI to Vpp output of amplifier measured by oscilloscope (C2 1 Mohm, C4 50 ohm)';
 params.Amplifier.SetupNotes = 'Using AR 100A250B at 100% gain and set BKP to have 50 ohm output load';
-params.Amplifier.GainDB =  51.0412;
 params.Amplifier.Tested =  '23-Jan-2020 11:28:02';
+params.Amplifier.GainDB =  51.0412;
+% Note that this gain value is used by many script to control signal
+% generator output and thus should be updated prior to each experiment
 
 %% General Settings
 params.Scope.ArmTrigger = 0;
@@ -56,8 +58,6 @@ params.Stages.step_distance = 0.0254/10/400;
 params.Stages.x_motor = 2;
 params.Stages.y_motor = 3;
 params.Stages.z_motor = 1;
-
-
 
 %% SG Parameters
 

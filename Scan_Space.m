@@ -1,7 +1,8 @@
 % Author: David Reza Mittelstein (drmittelstein@gmail.com)
 % Medical Engineering, California Institute of Technology, 2020
 
-% Acquire signal within all points in a 3d space
+% Uses Velmex stage to move in a predefined pattern to get pressure
+% waveform at all points in a 3d space
 
 %% Prepare Parameters Variable
 params = sub_AllSettings('Scan_Space');

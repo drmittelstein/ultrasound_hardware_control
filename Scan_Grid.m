@@ -1,7 +1,8 @@
 % Author: David Reza Mittelstein (drmittelstein@gmail.com)
 % Medical Engineering, California Institute of Technology, 2020
 
-% Uses Velmex stage to move in a predefined pattern to get pressure waveform at all points
+% Uses Velmex stage to move in a predefined pattern to get pressure
+% waveform at all points in a grid
 
 %% Initiatlize
 % Users can change these parameters to control how acquisition is performed

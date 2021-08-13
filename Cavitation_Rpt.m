@@ -3,6 +3,7 @@
 
 % Measure scattered signal from cavitating sample
 % Acquires multiple pulses of signal
+% Oscilloscope configured for single acquisition per pulse
 
 % Configuration with FUS Tx and Cavitation Detector Tx co-aligned on target
 
